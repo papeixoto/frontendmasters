@@ -1,0 +1,190 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: #efefef;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* Header */
+header {
+  background-color: #412316;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+}
+
+header img {
+  height: 30px;
+}
+
+header h1 {
+  color: #dbcea3;
+  margin: 0;
+  font-size: medium;
+}
+
+/* Page */
+.page {
+  padding: 20px;
+}
+
+/* Cards */
+.items {
+  grid-area: items;
+}
+
+.name {
+  grid-area: name;
+}
+
+.payment {
+  grid-area: payment;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "items name"
+    "items payment";
+  gap: 20px;
+}
+
+.card {
+  background-color: #ede1d5;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.24);
+}
+
+.card .card-title {
+  color: #845528;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: medium;
+}
+
+.card .card-content {
+  padding-top: 20px;
+}
+
+.item-quantity {
+  grid-area: quantity;
+}
+
+.item-name {
+  grid-area: name;
+}
+
+.item-price {
+  grid-area: price;
+}
+
+.item-options {
+  grid-area: options;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  row-gap: 10px;
+  grid-template-areas:
+    "quantity name price"
+    ". options .";
+  border-bottom: 1px solid #845528;
+  padding: 20px 0px;
+}
+
+.items .item:nth-last-child(1) {
+  border-bottom: none;
+}
+
+.item-name,
+.item-price {
+  font-weight: bold;
+}
+
+.item-price {
+  padding-right: 30px;
+}
+
+.item li {
+  color: #845528;
+}
+
+.input-group {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.input {
+  border-radius: 30px;
+  background-color: #ede1d5;
+  padding: 8px;
+  border-color: #845528;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.input-label {
+  background-color: #ede1d5;
+  color: #845528;
+  font-size: 11px;
+  position: absolute;
+  left: 25px;
+  top: -7px;
+  padding: 0 2px;
+}
+
+.input-small {
+  width: 300px;
+}
+
+.totals {
+  margin-top: 200px;
+}
+
+.totals-table {
+  margin: auto;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+.totals-table td {
+  padding: 10px;
+}
+
+.totals-table td:last-child {
+  text-align: right;
+}
+
+.final-totals {
+  font-weight: bold;
+}
+
+button {
+  background-color: #deb993;
+  border: none;
+  padding: 10px 30px;
+  width: 100%;
+  border-radius: 100px;
+  font-size: 16px;
+}
