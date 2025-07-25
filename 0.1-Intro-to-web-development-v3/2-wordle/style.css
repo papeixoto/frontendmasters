@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  border-bottom: 2px solid black;
+  width: 300px;
+  text-align: center;
+  padding: 40px 40px 20px 40px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.info-bar {
+  font-size: 40px;
+  animation: spin 1.5s linear infinite;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.cell {
+  height: 50px;
+  width: 50px;
+  border: 3px solid lightgray;
+  display: flex;
+  font-size: xx-large;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.cell.wrong {
+  background-color: grey;
+  color: white;
+}
+
+.cell.right {
+  background-color: green;
+  color: white;
+}
+
+.cell.position {
+  background-color: orange;
+  color: white;
+}
+
+@keyframes flash {
+  5% {
+    border-color: red;
+  }
+
+  100% {
+    border-color: lightgray;
+  }
+}
+
+.cell.invalid {
+  animation: flash 1s;
+}
+
+@keyframes rainbow {
+  0% {
+    color: red;
+  }
+  16% {
+    color: orange;
+  }
+  33% {
+    color: yellow;
+  }
+  50% {
+    color: green;
+  }
+  66% {
+    color: blue;
+  }
+  83% {
+    color: indigo;
+  }
+  100% {
+    color: violet;
+  }
+}
+
+.winner {
+  animation: rainbow 4s infinite linear;
+}

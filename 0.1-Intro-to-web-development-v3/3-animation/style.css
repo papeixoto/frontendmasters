@@ -1,0 +1,15 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ball {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+  position: relative;
+}
