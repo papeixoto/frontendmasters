@@ -1,0 +1,28 @@
+import { defineWorkspace } from "vitest/config";
+
+export default defineWorkspace([
+  // keep old tests running
+  {
+    extends: "./vite.config.js",
+    test: {
+      include: ["**/*.node.test.{js,jsx}"],
+      name: "happy-dom",
+      environment: "happy-dom",
+      coverage: ["text", "json", "html"],
+    },
+  },
+  {
+    extends: "./vite.config.js",
+    test: {
+      setupFiles: ["vitest-browser-react"],
+      include: ["**/*.browser.test.{js,jsx}"],
+      name: "browser",
+      browser: {
+        provider: "playwright",
+        enabled: true,
+        name: "chromium",
+      },
+      coverage: ["text", "json", "html"],
+    },
+  },
+]);
