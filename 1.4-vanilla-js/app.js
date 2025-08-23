@@ -5,6 +5,8 @@ import Router from "./services/Router.js";
 import { MenuPage } from "./components/MenuPage.js";
 import { OrderPage } from "./components/OrderPage.js";
 import { DetailsPage } from "./components/DetailsPage.js";
+import ProductItem from "./components/ProductItem.js";
+import CartItem from "./components/CartItem.js";
 
 // making the store global
 window.app = {};
@@ -16,4 +18,11 @@ app.router = Router;
 window.addEventListener("DOMContentLoaded", async () => {
   loadData();
   app.router.init();
+});
+
+window.addEventListener("app-cart-changed", () => {
+  const badge = document.getElementById("badge");
+  const quantity = app.store.cart.reduce((acc, item) => acc + item.quantity, 0);
+  badge.textContent = quantity;
+  badge.hidden = quantity === 0;
 });
